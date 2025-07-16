@@ -1,0 +1,28 @@
+.inputcity {
+  padding: 10px 15px;
+  font-size: 16px;
+  width: 250px;
+  border: 2px solid #f566f5;
+  border-radius: 10px;
+
+}
+.addbtn {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #007BFF;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+ 
+}
+.opt {
+  padding: 4px 5px;
+  width: 200px;
+  border: 2px solid #8c8af0;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  color: #333;
+  margin-top: 10px;
+
+}

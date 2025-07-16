@@ -1,0 +1,27 @@
+<h5 style="background-color: coral;">TASK:-NgFor Example *ngFor</h5>
+<p>NgFor Task 
+A.Create City Array Bind that to Dropdown
+B. Take one TextBox, button and dropdown
+ on add btn click Entered City Should be added to dropdown option
+ after adding city - textbox Should be empty
+Show count of Added Cities in P Tag.</p>
+<h2>City Dropdown (NgFor Task)</h2>
+
+<!-- Textbox for input -->
+<input type="text" class="inputcity"   [(ngModel)]="newCity" placeholder="Enter City">
+
+<!-- Add button -->
+<button class=" addbtn" (click)="addCity()">Add City</button>
+
+<br><br>
+
+<!-- Dropdown using *ngFor -->
+<select class="opt">
+  <option *ngFor="let city of cityList">{{ city }}</option>
+</select>
+
+<br><br>
+
+<!-- Show count -->
+<h4 style="color: #490303;">Total Cities: {{ cityList.length }}</h4>
+

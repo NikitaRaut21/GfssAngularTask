@@ -1,0 +1,36 @@
+<h5 style="background-color: green;">TASK :- Structural directvies*ngIf</h5>
+<p>Directives Structural Directives NgIf
+    A.Create 2 Radio Button for male & female
+    If male selected Show "You Have selected Male"
+    If feMale selected Show "You Have selected Female"
+
+    B. Take 2 textBox
+    if we enter same value in both textbox hide div else show
+</p>
+<h2>NgIf Example - Radio Button</h2>
+
+<label>
+  <input type="radio" name="gender" [(ngModel)]="gender" value="male"> Male
+</label>
+<label>
+  <input type="radio" name="gender" [(ngModel)]="gender" value="female"> Female
+</label>
+
+<div *ngIf="gender === 'male'" style="margin-top: 10px; color: green;">
+  <h3>You have selected Male🚹</h3>
+</div>
+<div *ngIf="gender === 'female'" style="margin-top: 10px; color: #ed1b56;">
+  <h3>have selected Female🚺</h3> 
+</div>
+
+<hr>
+
+<h2>NgIf Example - Compare Textboxes</h2>
+
+<input type="text" class="input" placeholder="Enter first value" [(ngModel)]="input1">&nbsp; &nbsp; &nbsp;
+<input type="text" class="input" placeholder="Enter second value" [(ngModel)]="input2">
+
+
+<div class=" valeumatch" *ngIf="input1 !== input2" style="margin-top: 10px;  ">
+ <h3> Values do not match!❎</h3>
+</div>
