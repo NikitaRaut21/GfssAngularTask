@@ -1,5 +1,5 @@
 import { Component, twoWayBinding } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { Variabletask } from './components/variabletask/variabletask';
 import { Objecttask } from './components/objecttask/objecttask';
 import { Arraytask } from './components/arraytask/arraytask';
@@ -19,7 +19,7 @@ import { BootstrapNgfor } from './components/bootstrap-ngfor/bootstrap-ngfor';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Variabletask,Objecttask,Arraytask,Functiontask,UserProfile,ImageComponent,ClickButton,TwoWaybinding,NgifExample,NgforExample,BootstrapNgfor],
+  imports: [RouterOutlet,Variabletask,Objecttask,Arraytask,Functiontask,UserProfile,ImageComponent,ClickButton,TwoWaybinding,NgifExample,NgforExample,BootstrapNgfor,RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
