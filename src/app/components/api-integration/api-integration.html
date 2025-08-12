@@ -1,0 +1,74 @@
+<p>api-integration works!</p>
+
+<h3 style="background-color: blueviolet;">Api-integartions!</h3>
+<button type="button" class="btn btn-primary " (click)="getAllDetails()">Get data</button>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered" *ngIf="postList.length > 0">
+                <tr>
+                    <th>Sr No</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+                <tr *ngFor="let list of postList; let sr = index">
+                    <td>{{sr+1}}</td>
+                    <td>{{list.title}}</td>
+                    <td>{{list.body}}</td>
+                    <td class="d-flex gap-2">
+                        <button type="button" class="btn btn-info"  (click)="editData(list)">Edit</button>
+                         <button type="button" class="btn btn-danger" (click)="deleteRecord(list.id)">Delete</button>
+                    </td>
+                </tr>
+            </table>
+        </div><hr>
+        <div class="col-5">
+  <form action="" >
+    
+    <div class="row p-3">
+      <div class="col-12 mb-3">
+        <h3 style="text-align: center;">Template form</h3>
+        <label for="title" class="form-label">Title</label>
+        <input type="text" name="title" id="title" class="form-control" #title="ngModel" [(ngModel)]=" postObj.title" required minlength="5">
+      <div class="text-danger">
+                @if( (title.touched ||  title.dirty) && title.errors?.['required']){
+                <span>This is required</span>
+                } @else if ((title.touched ||  title.dirty) &&  title.errors?.['minlength']) {
+                <span>Min 5 characters</span>
+                }
+       </div>
+      </div>
+      <div class="col-12 mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea name="des" id="description" class="form-control" rows="4" #des="ngModel" [(ngModel)]=" postObj.body" required minlength="20"></textarea>
+      <div class="text-danger">
+                @if( (des.touched || des.dirty) && des.errors?.['required']){
+                <span>This is required</span>
+                } @else if ((des.touched ||  des.dirty) &&  des.errors?.['minlength']) {
+                <span>Min 15 char</span>
+                }
+              </div>
+      </div>
+      <div class="col-12 mt-3">
+        <button type="button" class="btn btn-success mx-2"*ngIf=" postObj.id == 0" (click)="savePostData()">Save</button>
+        <button type="button" class="btn btn-primary mx-2"  *ngIf="postObj.id ! == 0"  (click)="updateData()">Update</button>
+        <button type="button" class="btn btn-secondary mx-2" (click)="reset()">Reset</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <app-table [columnData]="headingArray" [tableData]="postList" (edit)="editData($event)" (delete)="deleteRecord($event)"></app-table>
+    </div>
+  </div>
+</div>
+

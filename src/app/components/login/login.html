@@ -1,0 +1,37 @@
+<div class="login-container">
+  <form class="login-form shadow">
+    <h3 class="text-center mb-4 fw-bold">Login</h3>
+
+    <!-- Username -->
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text"  name="username"   class="form-control" id="username"    [(ngModel)]="userObj.userName"    placeholder="Enter your username">
+    </div>
+
+    <!-- Password -->
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password"  name="passng "   class="form-control" id="password"   [(ngModel)]="userObj. password"    placeholder="Enter your password">
+    </div>
+
+    <!-- Forgot Password -->
+    <div class="mb-3 text-end">
+      <a href="#" class="small text-decoration-none">Forgot password?</a>
+    </div>
+
+    <!-- Login Button -->
+    <button type="button" class="btn btn-primary w-100" (click)="login()">Login</button>
+
+    <!-- Divider -->
+    <div class="divider my-3">
+      <span>OR</span>
+    </div>
+
+    <!-- Create Account -->
+    <div class="text-center">
+      <p class="mb-1">Don't have an account?</p>
+      <button type="button" class="btn btn-outline-secondary btn-sm">Create Account</button>
+    </div>
+  </form>
+</div>
+

@@ -1,0 +1,6 @@
+<p>alert works!</p>
+<h3>Reusable Componnets</h3>
+<div class="alert " role="alert" [ngClass]="{'alert-primary': alertType== 'primary' , 'alert-warning':alertType == 'warning','alert-danger':alertType=='danger'}">
+  {{alertType}}........{{ message}}
+</div>
+
