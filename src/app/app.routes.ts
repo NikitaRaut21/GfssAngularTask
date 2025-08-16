@@ -14,6 +14,7 @@ import { FormTemp } from './components/form-temp/form-temp';
 import { ApiIntegration } from './components/api-integration/api-integration';
 import { Login } from './components/login/login';
 import { Layout } from './components/layout/layout';
+import { authGuard } from './components/gurads/auth-guard';
 
 export const routes: Routes = [
    // deafult route
@@ -34,7 +35,8 @@ export const routes: Routes = [
         children: [
             {
                 path: 'variabletask',
-                component: Variabletask
+                component: Variabletask,
+                canActivate:[authGuard]
             },
     {
         path: 'object',

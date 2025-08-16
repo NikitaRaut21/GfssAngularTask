@@ -40,18 +40,20 @@
           <a class="nav-link cursor-pointer" routerLink="twoway">Two-Way Binding</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link cursor-pointer" routerLink="ngif">NgIf Example</a>
+          <a class="nav-link cursor-pointer" routerLink="ngif">NgIf Exa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link cursor-pointer" routerLink="ngfor">NgFor Example</a>
+          <a class="nav-link cursor-pointer" routerLink="ngfor">NgFor Exa</a>
         </li>
         <li class="nav-item">
           <a class="nav-link cursor-pointer" routerLink="bootstrap">Bootstrap NgFor</a>
         </li>
-       
+         
       </ul>
          <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <span class="text text-info">  {{loggedUser}}</span>
+          
         <button class="btn btn-danger btn-sm" type="submit" (click)="logOff()">Log Out</button>
         <!-- <button class="btn btn-outline-success" type="submit" (click)=" logOff()">Log Out</button> -->
         

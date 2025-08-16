@@ -10,6 +10,13 @@ import {  Router,RouterLink,RouterOutlet } from '@angular/router';
 })
 export class Layout {
   router= inject(Router)
+  loggedUser:any;
+  constructor() {
+    const loginDetails = localStorage.getItem('loginUser');
+    if (loginDetails != null) {
+      this.loggedUser =loginDetails;
+    }
+  }
 
   logOff(){
   localStorage.removeItem('loginUser');
