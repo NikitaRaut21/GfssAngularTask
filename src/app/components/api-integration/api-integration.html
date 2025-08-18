@@ -31,7 +31,7 @@
       <div class="col-12 mb-3">
         <h3 style="text-align: center;">Template form</h3>
         <label for="title" class="form-label">Title</label>
-        <input type="text" name="title" id="title" class="form-control" #title="ngModel" [(ngModel)]=" postObj.title" required minlength="5">
+        <input type="text" name="title" id="title" class="form-control" #title="ngModel" [(ngModel)]=" PostObj.title" required minlength="5">
       <div class="text-danger">
                 @if( (title.touched ||  title.dirty) && title.errors?.['required']){
                 <span>This is required</span>
@@ -42,7 +42,7 @@
       </div>
       <div class="col-12 mb-3">
         <label for="description" class="form-label">Description</label>
-        <textarea name="des" id="description" class="form-control" rows="4" #des="ngModel" [(ngModel)]=" postObj.body" required minlength="20"></textarea>
+        <textarea name="des" id="description" class="form-control" rows="4" #des="ngModel" [(ngModel)]="PostObj.body" required minlength="20"></textarea>
       <div class="text-danger">
                 @if( (des.touched || des.dirty) && des.errors?.['required']){
                 <span>This is required</span>
@@ -52,8 +52,8 @@
               </div>
       </div>
       <div class="col-12 mt-3">
-        <button type="button" class="btn btn-success mx-2"*ngIf=" postObj.id == 0" (click)="savePostData()">Save</button>
-        <button type="button" class="btn btn-primary mx-2"  *ngIf="postObj.id ! == 0"  (click)="updateData()">Update</button>
+        <button type="button" class="btn btn-success mx-2"*ngIf=" PostObj.id == 0" (click)="savePostData()">Save</button>
+        <button type="button" class="btn btn-primary mx-2"  *ngIf="PostObj.id ! == 0"  (click)="updateData()">Update</button>
         <button type="button" class="btn btn-secondary mx-2" (click)="reset()">Reset</button>
       </div>
     </div>

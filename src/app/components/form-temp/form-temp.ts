@@ -1,6 +1,7 @@
 import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Constant } from '../../Constants/const';
 
 @Component({
   selector: 'app-form-temp',
@@ -9,6 +10,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './form-temp.css'
 })
 export class FormTemp {
+  ValidationMsg:any= Constant.VALIDATION_MSG;
  studentObj: any = {
     firstName: '',
     lastName: '',

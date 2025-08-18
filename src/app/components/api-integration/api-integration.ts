@@ -4,6 +4,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PostApis } from '../../services/post-apis';
 import { Table } from '../../reusableCoponents/table/table';
+import { post } from '../../Classes/postData';
+import { Ipost } from '../../Interface/Ipost';
+
+
+
 
 @Component({
   selector: 'app-api-integration',
@@ -14,13 +19,16 @@ standalone: true,
 })
 export class ApiIntegration {
 headingArray:any[]=['title','body']
-postList: any[] = [];
- postObj: any = {
-    userId: 0,
-    id: 0,
-    title: "",
-    body: ""
-  }
+postList:Ipost[]=[];
+  // postList: IPost[] = [];
+// postList: any[] = [];
+ PostObj:post=new post();
+//  postObj: any = {
+//     userId: 0,
+//     id: 0,
+//     title: "",
+//     body: ""
+//   }
 
   constructor(private http:HttpClient, private postService:PostApis) {
     this.getAllDetails();
@@ -56,20 +64,23 @@ postList: any[] = [];
   //   })
   // }
   savePostData(){
-    this.postService.createPost(this.postObj).subscribe((res:any)=>{
+    this.postService.createPost(this.PostObj).subscribe((res:any)=>{
       alert("Data save successfully...!");
       })
       }
- reset() {
-    this.postObj = {
-      userId: 0,
-      id: 0,
-      title: "",
-      body: ""
-    }
-  }
+//  reset() {
+//     this.postObj = {
+//       userId: 0,
+//       id: 0,
+//       title: "",
+//       body: ""
+//     }
+//   }
+reset() {
+  this.PostObj= new post();
+}
   editData(list:any){
-    this.postObj = list;
+    this.PostObj = list;
     console.log(list)
   }
   // updateData(){
@@ -78,7 +89,7 @@ postList: any[] = [];
   //   })
   // }
   updateData(){
-    this.postService.updatePost(this.postObj).subscribe((res:any)=>{
+    this.postService.updatePost(this.PostObj).subscribe((res:any)=>{
       alert("Data updated successfully...!");
       })
 }

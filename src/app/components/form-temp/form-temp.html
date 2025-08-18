@@ -6,9 +6,9 @@
                 id="inputEmail4" required minlength="3">
             <div class="text-danger">
                 @if( (fname.touched ||  fname.dirty) && fname.errors?.['required']){
-                <span>This is required</span>
+                <span>{{ValidationMsg.REQUIRED}}</span>
                 } @else if ((fname.touched ||  fname.dirty) &&  fname.errors?.['minlength']) {
-                <span>Min 3 char</span>
+                <span>{{ValidationMsg.MIN_LENGTH}}</span>
                 }
 
 
@@ -16,7 +16,16 @@
         </div>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Last Name</label>
-            <input type="text" name="lname" class="form-control" [(ngModel)]="studentObj.lastName" id="inputPassword4">
+            <input type="text" name="lname" class="form-control"  #lname="ngModel"[(ngModel)]="studentObj.lastName" id="inputPassword4">
+               <div class="text-danger">
+                @if( (lname.touched ||  lname.dirty) && lname.errors?.['required']){
+                <span>{{ValidationMsg.REQUIRED}}</span>
+                } @else if ((lname.touched || lname.dirty) &&  lname.errors?.['minlength']) {
+                <span>{{ValidationMsg.MIN_LENGTH}}</span>
+                }
+
+
+            </div>
         </div>
         <div class="col-6">
             <label for="inputAddress" class="form-label">Address</label>
@@ -29,7 +38,7 @@
             <input type="text" name="city" class="form-control" #city="ngModel" [(ngModel)]="studentObj.city" id="inputCity" required>
              <div class="text-danger">
                 @if( (city.touched ||  city.dirty) && city.errors?.['required']){
-                <span>This is required</span>
+             <span>{{ValidationMsg.REQUIRED}}</span>
                 }
             </div>
         </div>
