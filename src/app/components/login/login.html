@@ -5,13 +5,27 @@
     <!-- Username -->
     <div class="mb-3">
       <label for="username" class="form-label">Username</label>
-      <input type="text"  name="username"   class="form-control" id="username"    [(ngModel)]="userObj.userName"    placeholder="Enter your username">
+      <input type="text"  name="username"   class="form-control" id="userName"  #userName="ngModel"  [(ngModel)]="userObj.userName"    placeholder="Enter your username" required minlength="4">
+      <span class="text text-danger">
+     @if((userName. touched  || userName.dirty)&& userName.errors?.['required']){
+      <p>userName must be required</p>
+     }@else if((userName.touched || userName.dirty)&& userName.errors?.['minlength']){
+      <p>userName must be at least 4 characters</p>
+     }
+      </span>
     </div>
 
     <!-- Password -->
     <div class="mb-3">
       <label for="password" class="form-label">Password</label>
-      <input type="password"  name="passng "   class="form-control" id="password"   [(ngModel)]="userObj. password"    placeholder="Enter your password">
+      <input type="password"  name="passng "   class="form-control" id="password"  #password="ngModel"  [(ngModel)]="userObj. password"    placeholder="Enter your password" required minlength="3">
+      <span class="text text-danger">
+  @if((password.touched || password.dirty )&& password.errors?.['required']){
+    <p>password must be required</p>
+  }@else if((password.touched || password.dirty )&& password.errors?.['minlength']){
+    <p>password must be at least 3 characters</p>
+  }
+      </span>
     </div>
 
     <!-- Forgot Password -->

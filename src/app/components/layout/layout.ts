@@ -9,7 +9,7 @@ import {  Router,RouterLink,RouterOutlet } from '@angular/router';
   styleUrl: './layout.css'
 })
 export class Layout {
-  router= inject(Router)
+  router = inject(Router)
   loggedUser:any;
   constructor() {
     const loginDetails = localStorage.getItem('loginUser');
