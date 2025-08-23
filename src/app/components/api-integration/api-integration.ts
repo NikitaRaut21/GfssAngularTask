@@ -6,6 +6,7 @@ import { PostApis } from '../../services/post-apis';
 import { Table } from '../../reusableCoponents/table/table';
 import { post } from '../../Classes/postData';
 import { Ipost } from '../../Interface/Ipost';
+import { Router } from '@angular/router';
 
 
 
@@ -30,9 +31,17 @@ postList:Ipost[]=[];
 //     body: ""
 //   }
 
-  constructor(private http:HttpClient, private postService:PostApis) {
+  constructor(private http:HttpClient, private postService:PostApis,private router:Router) {
     this.getAllDetails();
   }
+
+// newData(){
+//   this.router.navigateByUrl('pform');
+// }
+newData() {
+  this.router.navigate(['pform']);
+}
+
 
   // getAllDetails() {
   //   this.http.get("https://jsonplaceholder.typicode.com/posts").subscribe((res: any) => {
@@ -79,10 +88,14 @@ postList:Ipost[]=[];
 reset() {
   this.PostObj= new post();
 }
-  editData(list:any){
-    this.PostObj = list;
-    console.log(list)
+  // editData(list:any){
+  //   this.PostObj = list;
+  //   console.log(list)
+  // }
+  editData(id:number){
+    this.router.navigate(['pform',id]);
   }
+  
   // updateData(){
   //   this.http.post("https://jsonplaceholder.typicode.com/posts/1", this.postObj).subscribe((res:any)=>{
   //     alert("Data updated successfully...!");

@@ -28,7 +28,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,RouterLink,Variabletask,Objecttask,Arraytask,Functiontask,UserProfile,ImageComponent,ClickButton,TwoWaybinding,NgifExample,NgforExample,BootstrapNgfor,FormTemp,ApiIntegration,ImageComp,Alert,Btn],
+  imports: [RouterOutlet,Variabletask,Objecttask,Arraytask,Functiontask,UserProfile,ImageComponent,ClickButton,TwoWaybinding,NgifExample,NgforExample,BootstrapNgfor,FormTemp,ApiIntegration,ImageComp,Alert,Btn],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

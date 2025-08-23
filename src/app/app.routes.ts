@@ -10,11 +10,12 @@ import { TwoWaybinding } from './components/two-waybinding/two-waybinding';
 import { NgifExample } from './components/ngif-example/ngif-example';
 import { NgforExample } from './components/ngfor-example/ngfor-example';
 import { BootstrapNgfor } from './components/bootstrap-ngfor/bootstrap-ngfor';
-import { FormTemp } from './components/form-temp/form-temp';
+
 import { ApiIntegration } from './components/api-integration/api-integration';
 import { Login } from './components/login/login';
 import { Layout } from './components/layout/layout';
 import { authGuard } from './components/gurads/auth-guard';
+import { PostForm } from './components/postform/post-form';
 
 export const routes: Routes = [
    // deafult route
@@ -79,6 +80,19 @@ export const routes: Routes = [
         path: 'bootstrap',
         component: BootstrapNgfor
     },
+    {
+        path:'api',
+        component:ApiIntegration
+
+    },
+    {
+       path:'pform/:id',
+       component:PostForm
+    }
+    // {
+    //     path:'pform/:id',
+    //     component:PostForm
+    // }
 ]
     }
    
